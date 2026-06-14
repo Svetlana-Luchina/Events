@@ -3,4 +3,4 @@
 [Руководство по настройке Webpack](https://webpack.js.org/guides/)
 [Руководство по настройке GitHub Actions](https://docs.github.com/en/actions/quickstart)
 ![CI](https://github.com/Svetlana-Luchina/event/actions/workflows/web.yml/badge.svg)
-https://svetlana-luchina.github.io/event/
+[text](https://svetlana-luchina.github.io/event/)
