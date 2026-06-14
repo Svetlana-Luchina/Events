@@ -2,9 +2,14 @@ import Board from './Board';
 import Goblin from './Goblin';
 import ScoreView from './ScoreView';
 
+const FIELD_SIZE = 4;
+const CELLS_COUNT = FIELD_SIZE * FIELD_SIZE;
+const MAX_MISSES = 5;
+const GOBLIN_INTERVAL_MS = 1000;
+
 export default class Game {
   constructor() {
-    this.maxMisses = 5;
+    this.maxMisses = MAX_MISSES;
     this.hits = 0;
     this.misses = 0;
     this.currentIndex = -1;
@@ -21,7 +26,7 @@ export default class Game {
   getRandomIndex() {
     let newIndex;
     do {
-      newIndex = Math.floor(Math.random() * 16);
+      newIndex = Math.floor(Math.random() * CELLS_COUNT);
     } while (newIndex === this.currentIndex);
     return newIndex;
   }
@@ -36,7 +41,7 @@ export default class Game {
 
   startTimer() {
     if (this.timer) clearTimeout(this.timer);
-    this.timer = setTimeout(() => this.onMiss(), 1000);
+    this.timer = setTimeout(() => this.onMiss(), GOBLIN_INTERVAL_MS);
   }
 
   onMiss() {

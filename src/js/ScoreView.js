@@ -1,3 +1,5 @@
+const MESSAGE_DISPLAY_MS = 3000;
+
 export default class ScoreView {
   constructor(hitElementId, missElementId) {
     this.hitElement = document.getElementById(hitElementId);
@@ -18,6 +20,6 @@ export default class ScoreView {
     msgDiv.style.color = isError ? 'red' : 'green';
     setTimeout(() => {
       if (msgDiv.textContent === text) msgDiv.textContent = '';
-    }, 3000);
+    }, MESSAGE_DISPLAY_MS);
   }
 }
